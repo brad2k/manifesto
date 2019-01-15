@@ -37,10 +37,6 @@ const Layout = ({ children }) => (
     <ThemeProvider theme={theme}>
         <Fragment>
             <GobalStyles />
-            <link
-                href="https://fonts.googleapis.com/css?family=Montserrat|Shadows+Into+Light"
-                rel="stylesheet"
-            />
             {children}
         </Fragment>
     </ThemeProvider>

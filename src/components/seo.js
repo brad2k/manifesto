@@ -7,24 +7,20 @@ function SEO({ description, lang, title }) {
     return (
         <StaticQuery
             query={detailsQuery}
-            render={data => {
-                const metaDescription =
-                    description || data.site.siteMetadata.description
-                return (
-                    <Helmet
-                        htmlAttributes={{
-                            lang,
-                        }}
-                        title={title}
-                    />
-                )
-            }}
+            render={data => (
+                <Helmet
+                    htmlAttributes={{
+                        lang,
+                    }}
+                    title={title}
+                />
+            )}
         />
     )
 }
 
 SEO.defaultProps = {
-    lang: `en`
+    lang: `en`,
 }
 
 SEO.propTypes = {

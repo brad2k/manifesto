@@ -16,9 +16,8 @@ const fancyFont = css`
 `
 
 const Wrapper = styled.div`
-    padding-bottom: 10rem;
-
-    &:before {
+    &:before,
+    &:after {
         display: block;
         content: '';
         height: 2rem;
@@ -29,13 +28,15 @@ const Wrapper = styled.div`
 const Centered = styled.main`
     max-width: 76rem;
     margin: 0 auto;
+    padding-bottom: 10rem;
 `
 
 const Face = styled.img`
     display: block;
     width: 20rem;
     border-radius: 50%;
-    box-shadow: 0 0 0 0.1rem rgba(0, 0, 0, 0.5);
+    // box-shadow: 0 0 0 0.1rem rgba(0, 0, 0, 0.5);
+    border: 0.5rem solid ${props => props.theme.blue};
 `
 
 const WelcomeBox = styled.header`
