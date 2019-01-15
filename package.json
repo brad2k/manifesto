@@ -7,7 +7,6 @@
   "dependencies": {
     "gatsby": "^2.0.91",
     "gatsby-plugin-react-helmet": "^3.0.2",
-    "gatsby-plugin-react-svg": "^2.0.0",
     "gatsby-plugin-web-font-loader": "^1.0.4",
     "gatsby-source-filesystem": "^2.0.16",
     "prop-types": "^15.6.2",

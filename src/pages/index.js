@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 
-import Hedgehog from '../svg/Hedgehog.svg'
+import Hedgehog from '../images/Hedgehog.svg'
 
 const FancyHedgehog = styled(Hedgehog)`
     display: block;
