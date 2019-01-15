@@ -77,7 +77,7 @@ const H2 = styled.h2`
 const SecondPage = () => (
     <Layout>
         <Wrapper>
-            <SEO title="Page two" />
+            <SEO title="Brad Azevedo — About me" />
             <Centered>
                 <WelcomeBox>
                     <Face src={face} alt="Me" />
