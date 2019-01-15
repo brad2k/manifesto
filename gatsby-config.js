@@ -6,6 +6,7 @@ module.exports = {
     },
     plugins: [
         `gatsby-plugin-react-helmet`,
+        `gatsby-plugin-eslint`,
         {
             resolve: `gatsby-source-filesystem`,
             options: {
@@ -19,6 +20,12 @@ module.exports = {
                 google: {
                     families: ['Montserrat', 'Shadows Into Light'],
                 },
+            },
+        },
+        {
+            resolve: `gatsby-plugin-styled-components`,
+            options: {
+                
             },
         },
     ],
