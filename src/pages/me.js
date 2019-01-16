@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 import React from 'react'
 import styled, { css } from 'styled-components'
 
@@ -5,6 +7,7 @@ import Layout from '../components/layout'
 import SEO from '../components/seo'
 
 import face from '../images/face.jpg'
+import face200 from '../images/face.200.jpg'
 
 const fancyFont = css`
     font-family: 'Shadows Into Light';
@@ -28,12 +31,14 @@ const Wrapper = styled.div`
 const Centered = styled.main`
     max-width: 76rem;
     margin: 0 auto;
-    padding-bottom: 10rem;
+    width: 100%;
+    padding: 0 2rem 10rem;
 `
 
 const Face = styled.img`
     display: block;
     width: 20rem;
+    margin: 0 auto;
     border-radius: 50%;
     // box-shadow: 0 0 0 0.1rem rgba(0, 0, 0, 0.5);
     border: 0.5rem solid ${props => props.theme.blue};
@@ -41,10 +46,18 @@ const Face = styled.img`
 
 const WelcomeBox = styled.header`
     display: grid;
-    grid-template-columns: 20rem 1fr;
-    grid-gap: 6rem;
+    grid-template-columns: 1fr;
+    grid-gap: 0;
     font-size: 10rem;
-    margin: 8rem 0 10rem;
+    margin: 4rem 0 5rem;
+    text-align: center;
+
+    @media (min-width: 40rem) {
+        grid-template-columns: 20rem 1fr;
+        margin: 8rem 0 10rem;
+        text-align: left;
+        grid-gap: 6rem;
+    }
 
     strong {
         ${fancyFont}
@@ -65,7 +78,13 @@ const Group = styled.div`
     a {
         color: #000;
         text-decoration: none;
-        margin-right: 5rem;
+        display: block;
+        margin-bottom: 1rem;
+
+        @media (min-width: 50rem) {
+            margin-right: 5rem;
+            display: inline-block;
+        }
     }
 `
 
@@ -80,7 +99,10 @@ const SecondPage = () => (
             <SEO title="Brad Azevedo — About me" />
             <Centered>
                 <WelcomeBox>
-                    <Face src={face} alt="Me" />
+                    <Face
+                        srcSet={`${face200},
+                                ${face} 2x`}
+                        src={face200} alt="Me" />
                     <div>
                         <strong>Ahoy!</strong>
                     </div>
@@ -129,10 +151,10 @@ const SecondPage = () => (
                         a tough one to grapple with, but I realized the benefits
                         shortly after the glaze wore off of my eyes. I dove into
                         React and thought, “ZOMG, this JSX business is killing
-                        me”, but five minutes later I was among the converted. I
-                        resisted CSS-in-JS because that’s against the rules,
-                        damn it, but I spent some time with styled-components
-                        and ate my words.
+                        me”, but five minutes later I was among the converted.
+                        ES6 is now called ES2015, you say? I resisted CSS-in-JS
+                        because that’s against the rules, damn it, but I spent
+                        some time with styled-components and ate my words.
                     </p>
 
                     <p>
@@ -205,13 +227,20 @@ const SecondPage = () => (
                     <H2>Sound good?</H2>
 
                     <p>Get in touch!</p>
-                    
+
                     <p>
                         <a href="mailto:&#098;&#114;&#097;&#100;&#050;&#107;&#064;&#103;&#109;&#097;&#105;&#108;&#046;&#099;&#111;&#109;?subject=Ahoy!">
                             &#098;&#114;&#097;&#100;&#050;&#107;&#064;&#103;&#109;&#097;&#105;&#108;&#046;&#099;&#111;&#109;
                         </a>
-                        <a href="tel:&#052;&#049;&#053;&#045;&#054;&#048;&#049;&#045;&#056;&#048;&#052;&#055;">&#052;&#049;&#053;&#045;&#054;&#048;&#049;&#045;&#056;&#048;&#052;&#055;</a>
-                        <a href="https://www.dropbox.com/s/9fd713uf50gif5l/Brad%20Azevedo%20-%20CV.pdf?dl=0" rel="external">Resume &raquo;</a>
+                        <a href="tel:&#052;&#049;&#053;&#045;&#054;&#048;&#049;&#045;&#056;&#048;&#052;&#055;">
+                            &#052;&#049;&#053;&#045;&#054;&#048;&#049;&#045;&#056;&#048;&#052;&#055;
+                        </a>
+                        <a
+                            href="https://www.dropbox.com/s/9fd713uf50gif5l/Brad%20Azevedo%20-%20CV.pdf?dl=0"
+                            rel="external"
+                        >
+                            Resume &raquo;
+                        </a>
                     </p>
                 </Group>
             </Centered>

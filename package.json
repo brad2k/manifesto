@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "brad-azevedo-manifesto",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "description": "Get to know Brad Azevedo—front-end developer extraordinaire!",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Brad Azevedo <brad2k@gmail.com>",
   "dependencies": {
     "babel-plugin-styled-components": "^1.10.0",
     "gatsby": "^2.0.91",
