@@ -1,7 +1,7 @@
 /* eslint-disable */
 
 import React from 'react'
-import styled, { css } from 'styled-components'
+import styled, { css, keyframes } from 'styled-components'
 
 import Layout from '../components/layout'
 import SEO from '../components/seo'
@@ -9,23 +9,35 @@ import SEO from '../components/seo'
 import face from '../images/face.jpg'
 import face200 from '../images/face.200.jpg'
 
+const moveBg = keyframes`
+    0%, 100% {
+      background-position: left top;
+    }
+    50% {
+      background-position: center right;
+    }
+`
+
 const fancyFont = css`
     font-family: 'Shadows Into Light';
     font-display: swap;
 
     &:hover {
-        color: ${props => props.theme.pink};
+        background: linear-gradient(to right, ${props => props.theme.blue}, ${props => props.theme.pink});
+        background-color: ${props => props.theme.pink};
+        background-clip: text;
+        background-size: 200% 100%;
+        -webkit-text-fill-color: transparent;
+        box-decoration-break: clone;
+        animation: ${moveBg} 3s infinite;
     }
 `
 
+
+
 const Wrapper = styled.div`
-    &:before,
-    &:after {
-        display: block;
-        content: '';
-        height: 2rem;
-        background-color: ${props => props.theme.blue};
-    }
+    border: 2rem solid ${props => props.theme.blue};
+    border-width: 2rem 0;
 `
 
 const Centered = styled.main`
@@ -89,8 +101,12 @@ const Group = styled.div`
 `
 
 const H2 = styled.h2`
-    margin-top: 5rem;
-    ${fancyFont}
+    ${fancyFont};
+    display: inline-block;
+
+    &:not(:first-of-type) {
+        margin-top: 5rem;
+    }
 `
 
 const SecondPage = () => (
