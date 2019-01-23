@@ -8,7 +8,7 @@ const theme = {
     text: '#000',
 }
 
-const GobalStyles = createGlobalStyle`
+const GlobalStyles = createGlobalStyle`
     html {
         padding: 0;
         margin: 0;
@@ -29,14 +29,13 @@ const GobalStyles = createGlobalStyle`
         background-color: ${props => props.theme.bg};
         color: ${props => props.theme.text};
         font-family: 'Montserrat', sans-serif;
-        font-display: swap;
     }
 `
 
 const Layout = ({ children }) => (
     <ThemeProvider theme={theme}>
         <Fragment>
-            <GobalStyles />
+            <GlobalStyles />
             {children}
         </Fragment>
     </ThemeProvider>

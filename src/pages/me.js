@@ -20,7 +20,6 @@ const moveBg = keyframes`
 
 const fancyFont = css`
     font-family: 'Shadows Into Light';
-    font-display: swap;
 
     &:hover {
         background: linear-gradient(to right, ${props => props.theme.blue}, ${props => props.theme.pink});
